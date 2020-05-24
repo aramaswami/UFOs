@@ -27,8 +27,13 @@ function buildTable(data) {
   function handleClick() {
     // Grab the datetime value from the filter
     let date = d3.select("#datetime").property("value");
+    let city = d3.select("#city").property("value");
+    let state= d3.select("#state").property("value");
+    let country= d3.select("#country").property("value");
+    let shape= d3.select("#shape").property("value");
+
     let filteredData = tableData;
-    
+
      // Check to see if a date was entered and filter the
     // data using that date.
     if (date) {
@@ -36,13 +41,47 @@ function buildTable(data) {
       // rows where the `datetime` value matches the filter value
       filteredData = filteredData.filter(row => row.datetime === date);
     };
-    
+
+    if (city) {
+      filteredData = filteredData.filter(row => row.city === city);
+    };
+
+    if (state) {
+      filteredData = filteredData.filter(row => row.state === state);
+    };
+
+    if (country) {
+      filteredData = filteredData.filter(row => row.country === country);
+    };
+
+    if (shape) {
+      filteredData = filteredData.filter(row => row.shape === shape);
+    };
+
+
      // Rebuild the table using the filtered data
     // @NOTE: If no date was entered, then filteredData will
     // just be the original tableData.
     buildTable(filteredData);
   };
-    //Listen for form button click
-  d3.selectAll("#filter-btn").on("click", handleClick);
+
+//clear filters
+//function showAll(){
+    //var $rows = $('#tbody tr');
+    //var $rows = tableData.rows;
+    //$rows.show();
+//};
+
+//var buttonClearFilter = $('#clearFilter);
+//buttonClearFilter.click(showAll);
+//d3.selectAll("#clearFilter").on("click",showAll);
+
+//clear_end
+
+
   //Initial build
-  buildTable(tableData);
+buildTable(tableData);
+
+ //Listen for form button click
+d3.selectAll("#filter-btn").on("click", handleClick);
+//d3.selectAll("#clearFilter").on("click",showAll);
