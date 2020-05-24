@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +38,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
           <form class="bg-dark">
               <p>Filter Search</p>
 
@@ -46,9 +47,36 @@
                         <label for="date">Enter Date</label>
                         <input type="text" placeholder="1/10/2010" id="datetime" />
                     </li>
+
+                    <li class="list-group-item bg-dark">
+                        <label for="city">Enter City</label>
+                        <input type="text" placeholder="city" id="city" />
+                    </li>
+
+                    <li class="list-group-item bg-dark">
+                        <label for="state">Enter State</label>
+                        <input type="text" placeholder="state" id="state" />
+                    </li>
+
+                    <li class="list-group-item bg-dark">
+                        <label for="country">Enter Country</label>
+                        <input type="text" placeholder="country" id="country" />
+                    </li>
+
+
+                    <li class="list-group-item bg-dark">
+                        <label for="shape">Enter Shape</label>
+                        <input type="text" placeholder="shape" id="shape" />
+                    </li>
+
                     <li class="list-group-item bg-dark">
                         <button id="filter-btn" type="button" class="btn btn-dark">Filter Table</button>
                     </li>
+
+                    <li class="list-group-item bg-dark">
+                        <button id="clearFilter">Clear filter</button>
+                    </li>
+
                 </ul>
             </form>
 
@@ -58,7 +86,7 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-
+                    <th>Date</th>
                     <th>City</th>
                     <th>State</th>
                     <th>Country</th>
